@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Themes</title>
+    <style>
+        .theme-dark {
+            background-color: black;
+            color: white;
+        }
+
+        .theme-light {
+            background-color: white;
+            color: black;
+        }
+
+        .active {
+            border: solid 1px black;
+            border-radius: 50px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+
+
+
+        .para {
+            font-size: 20px;
+            text-align: center;
+            padding: 10px 40px;
+        }
+
+        .icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+        }
+
+        .icon {
+            height: 40px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 50px;
+
+        }
+        .img{
+            height: 250px;
+            width: 250px;
+            display: flex;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="icons">
+        <img src="dark.png" id="dark" class="icon" onclick="darkmode()" />
+        <img src="light.png" id="light" class="icon" onclick="lightmode()" />
+    </div>
+    <h1 class="title">Light Dark Theme Switcher</h1>
+    <div class="content">
+
+
+<img src="day-and-night.png" class="img"/>
+        <p id="para" class="para">A dark theme displays dark surfaces across the majority of a UI. It's designed to be a supplemental mode to a default (or light) theme. Dark themes reduce the luminance emitted by device screens, while still meeting minimum color contrast ratios.
+    </div>
+    <script>
+        function lightmode() {
+            const icon1 = document.getElementById("light");
+            icon1.classList.add("active");
+
+            const icon2 = document.getElementById("dark");
+            icon2.classList.remove("active");
+
+            const theme = document.getElementById("body");
+            theme.className = "theme-light";
+
+        }
+        function darkmode() {
+            const icon1 = document.getElementById("light");
+            icon1.classList.remove("active");
+
+            const icon2 = document.getElementById("dark");
+            icon2.classList.add("active");
+
+            const theme = document.getElementById("body");
+            theme.className = "theme-dark";
+
+        }
+    </script>
+</body>
+
+</html>
